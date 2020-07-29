@@ -1,0 +1,336 @@
+/*======================================
+
+        Default Values
+
+Fonts: Raleway(text), Merryweather (logo)
+
+Colors:
+1. Some kind of Red: #FF5757;
+2. Dark Grey: #111;
+
+======================================*/
+
+
+
+/*------------------------------
+        Basic setup
+------------------------------*/
+:root {
+	--logo-color: #FF5757;
+	--text-color: #111;
+	--offset: 158px;
+}
+
+:target::before {
+	content: "";
+	display: block;
+	height: var(--offset);
+	margin-top: calc(var(--offset) * -1);
+}
+
+/*
+html{
+    scroll-behavior: smooth;
+}
+*/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: var(--text-color);
+	font-family: 'Raleway', sans-serif;
+	text-rendering: optimizeLegibility;
+}
+
+
+li {
+	list-style: none;
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+/*------------------------------
+            Header
+------------------------------*/
+header {
+	width: 100%;
+	background-color: #fff;
+	color: var(--text-color);
+}
+
+.heading-div {
+	max-width: 1400px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10px;
+	position: relative;
+	border-bottom: 2px solid var(--logo-color);
+
+}
+
+.heading-div img {
+	width: 120px;
+	margin: 10px 0;
+}
+
+.nav-menu a {
+	color: var(--text-color);
+	padding: 15px 10px;
+	margin: 0 20px;
+	font-size: 21px;
+	transition: 0.3s ease-out;
+}
+
+.nav-menu a:hover {
+	border-bottom: 4px solid var(--logo-color);
+}
+
+/*sticky nav*/
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.94)
+}
+
+/*------------------------------
+        Hamburger menu
+------------------------------*/
+.hamburger-menu {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	cursor: pointer;
+	display: none;
+	/*    transition: all 1s ease-in-out;*/
+}
+
+.hamburger {
+	width: 35px;
+	height: 4px;
+	background-color: var(--text-color);
+	border-radius: 10px;
+	transition: all 0.5s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+	content: '';
+	position: absolute;
+	width: 35px;
+	height: 4px;
+	background-color: var(--text-color);
+	border-radius: 10px;
+	transition: all 0.6s ease;
+}
+
+.hamburger::before {
+	transform: translateY(-10px);
+}
+
+.hamburger::after {
+	transform: translateY(10px);
+}
+
+/* menu animation */
+.hamburger-menu.open .hamburger {
+	transform: translateX(50px);
+	background: transparent;
+
+}
+
+.hamburger-menu.open .hamburger::before {
+	transform: rotate(-45deg) translate(-35px, -35px);
+	background-color: var(--logo-color);
+
+}
+
+.hamburger-menu.open .hamburger::after {
+	transform: rotate(45deg) translate(-35px, 35px);
+	background-color: var(--logo-color);
+}
+
+/*------------------------------
+         Header section
+------------------------------*/
+.header-section {
+	background-image: url(../img/cover-min.jpg);
+	width: 100%;
+	height: 60vh;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center top;
+	margin-top: 146px;
+}
+
+
+
+
+/*------------------------------
+         About section
+------------------------------*/
+.about-me {
+	margin-top: 80px;
+
+}
+
+.section-heading {
+	text-transform: uppercase;
+	font-size: 28px;
+}
+
+.section-heading::after {
+	display: block;
+	content: "";
+	background-color: var(--logo-color);
+	height: 2px;
+	margin: 10px 0;
+}
+
+
+.about-me p {
+	margin: 40px 0;
+	text-align: justify;
+}
+
+.my-images {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.image {
+	width: 33%;
+}
+
+.image:nth-child(2) {
+	margin: 0 15px;
+}
+
+.image img {
+	width: 100%;
+}
+
+.image h3 {
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 17px;
+
+}
+
+/*------------------------------
+         Portfolio section
+------------------------------*/
+.portfolio {
+	margin-top: 80px;
+}
+
+.portfolio-img {
+	display: flex;
+	justify-content: space-between;
+	flex-flow: wrap;
+	margin-top: 40px;
+}
+
+.portfolio-img img {
+	width: 32.5%;
+	height: 100%;
+	margin-bottom: 20px;
+}
+
+/*------------------------------
+         Blog section
+------------------------------*/
+.blog {
+	margin-top: 80px;
+}
+
+.blog-text {
+	margin-top: 40px;
+}
+
+.blog-text img {
+	width: 300px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.blog-text p {
+	text-align: justify;
+}
+
+/*------------------------------
+         Contact section
+------------------------------*/
+.contact {
+	margin-top: 80px;
+}
+
+form {
+	text-align: center;
+	margin-top: 40px;
+
+}
+
+form label {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 18px;
+	color: var(--text-color);
+}
+
+form input,
+textarea {
+	display: block;
+	margin: 15px auto;
+	border: 2px solid var(--logo-color);
+	width: 70%;
+	padding: 7px;
+	resize: none;
+}
+
+form button {
+	background-color: var(--text-color);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	margin-top: 10px;
+	transition: all 0.3s ease-out;
+
+}
+
+form button:hover {
+	background-color: var(--logo-color);
+}
+
+/*------------------------------
+           Footer
+------------------------------*/
+footer {
+	background-color: var(--text-color);
+	color: white;
+	margin-top: 40px;
+}
+
+footer p {
+	text-align: center;
+	padding: 15px;
+}
