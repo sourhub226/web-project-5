@@ -28,11 +28,6 @@ Colors:
 	margin-top: calc(var(--offset) * -1);
 }
 
-/*
-html{
-    scroll-behavior: smooth;
-}
-*/
 
 * {
 	box-sizing: border-box;
@@ -118,7 +113,6 @@ header {
 	right: 0;
 	cursor: pointer;
 	display: none;
-	/*    transition: all 1s ease-in-out;*/
 }
 
 .hamburger {
@@ -178,8 +172,6 @@ header {
 	background-position: center top;
 	margin-top: 146px;
 }
-
-
 
 
 /*------------------------------
