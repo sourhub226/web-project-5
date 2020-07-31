@@ -44,11 +44,12 @@ $(document).ready(function () {
 //smooth scroll
 $(function () {
 	$('.smoothScroll').click(function () {
-		if ($(this).is("#about-link")) {
-			offsetY = 0;
-		} else {
-			offsetY = parseInt(getComputedStyle(root).getPropertyValue('--offset'));
-		}
+//		if ($(this).is("#about-link")) {
+//			offsetY = 165;
+//		} else {
+//			
+//		}
+		offsetY = parseInt(getComputedStyle(root).getPropertyValue('--offset'));
 		console.log(offsetY);
 
 		if ($(window).width() < 550) {
